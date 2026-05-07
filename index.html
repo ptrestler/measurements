@@ -6,7 +6,6 @@
 <title>Body Measurements Tracker</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: #f7f6f3;
@@ -17,7 +16,6 @@
     justify-content: center;
     padding: 2rem 1rem;
   }
-
   .card {
     background: #ffffff;
     border-radius: 16px;
@@ -27,7 +25,6 @@
     max-width: 980px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   }
-
   .header {
     display: flex;
     align-items: flex-start;
@@ -36,19 +33,8 @@
     flex-wrap: wrap;
     gap: 1rem;
   }
-
-  .header h1 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #1a1a18;
-    margin-bottom: 4px;
-  }
-
-  .header p {
-    font-size: 13px;
-    color: #888780;
-  }
-
+  .header h1 { font-size: 20px; font-weight: 600; color: #1a1a18; margin-bottom: 4px; }
+  .header p { font-size: 13px; color: #888780; }
   .unit-toggle {
     display: flex;
     border: 1px solid #d3d1c7;
@@ -56,7 +42,6 @@
     overflow: hidden;
     flex-shrink: 0;
   }
-
   .unit-btn {
     padding: 7px 16px;
     font-size: 13px;
@@ -67,24 +52,9 @@
     font-family: inherit;
     transition: background 0.15s, color 0.15s;
   }
-
-  .unit-btn.active {
-    background: #f1efe8;
-    color: #1a1a18;
-    font-weight: 500;
-  }
-
-  .table-wrap {
-    overflow-x: auto;
-    margin-bottom: 1rem;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 700px;
-  }
-
+  .unit-btn.active { background: #f1efe8; color: #1a1a18; font-weight: 500; }
+  .table-wrap { overflow-x: auto; margin-bottom: 1rem; }
+  table { width: 100%; border-collapse: collapse; min-width: 700px; }
   thead th {
     font-size: 11px;
     font-weight: 600;
@@ -95,13 +65,9 @@
     text-align: center;
     border-bottom: 1px solid #e5e3dc;
   }
-
   thead th:first-child { text-align: left; }
-
   tbody tr:hover { background: #f7f6f3; }
-
   tbody td { padding: 4px 4px; }
-
   tbody td input {
     width: 100%;
     padding: 7px 8px;
@@ -114,138 +80,50 @@
     text-align: center;
     transition: border-color 0.15s, background 0.15s;
   }
-
-  tbody td input[type="date"] {
-    text-align: left;
-    font-size: 12px;
-    min-width: 120px;
-  }
-
-  tbody td input:focus {
-    outline: none;
-    border-color: #b4b2a9;
-    background: #fff;
-  }
-
+  tbody td input[type="date"] { text-align: left; font-size: 12px; min-width: 120px; }
+  tbody td input:focus { outline: none; border-color: #b4b2a9; background: #fff; }
   .del-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #b4b2a9;
-    font-size: 15px;
-    padding: 6px 8px;
-    border-radius: 6px;
-    line-height: 1;
-    transition: color 0.15s;
+    background: none; border: none; cursor: pointer; color: #b4b2a9;
+    font-size: 15px; padding: 6px 8px; border-radius: 6px; line-height: 1; transition: color 0.15s;
   }
-
   .del-btn:hover { color: #c0392b; }
-
   .add-btn {
-    margin-top: 8px;
-    padding: 8px 16px;
-    font-size: 13px;
-    font-family: inherit;
-    border: 1px solid #d3d1c7;
-    border-radius: 8px;
-    background: transparent;
-    color: #888780;
-    cursor: pointer;
-    transition: background 0.15s, color 0.15s;
+    margin-top: 8px; padding: 8px 16px; font-size: 13px; font-family: inherit;
+    border: 1px solid #d3d1c7; border-radius: 8px; background: transparent;
+    color: #888780; cursor: pointer; transition: background 0.15s, color 0.15s;
   }
-
-  .add-btn:hover {
-    background: #f1efe8;
-    color: #1a1a18;
-  }
-
-  .divider {
-    border: none;
-    border-top: 1px solid #e5e3dc;
-    margin: 1.5rem 0;
-  }
-
+  .add-btn:hover { background: #f1efe8; color: #1a1a18; }
+  .divider { border: none; border-top: 1px solid #e5e3dc; margin: 1.5rem 0; }
   .notes-label {
-    font-size: 12px;
-    font-weight: 500;
-    color: #888780;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    display: block;
-    margin-bottom: 6px;
+    font-size: 12px; font-weight: 500; color: #888780;
+    text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 6px;
   }
-
   textarea {
-    width: 100%;
-    font-size: 13px;
-    font-family: inherit;
-    color: #1a1a18;
-    background: #f7f6f3;
-    border: 1px solid #e5e3dc;
-    border-radius: 8px;
-    padding: 10px 12px;
-    resize: vertical;
-    min-height: 72px;
-    transition: border-color 0.15s;
+    width: 100%; font-size: 13px; font-family: inherit; color: #1a1a18;
+    background: #f7f6f3; border: 1px solid #e5e3dc; border-radius: 8px;
+    padding: 10px 12px; resize: vertical; min-height: 72px; transition: border-color 0.15s;
   }
-
-  textarea:focus {
-    outline: none;
-    border-color: #b4b2a9;
-    background: #fff;
-  }
-
-  .save-bar {
-    display: flex;
-    gap: 12px;
-    margin-top: 1.25rem;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
+  textarea:focus { outline: none; border-color: #b4b2a9; background: #fff; }
+  .save-bar { display: flex; gap: 12px; margin-top: 1.25rem; align-items: center; flex-wrap: wrap; }
   .save-btn {
-    padding: 9px 22px;
-    font-size: 13px;
-    font-weight: 500;
-    font-family: inherit;
-    border: 1px solid #d3d1c7;
-    border-radius: 8px;
-    background: #f1efe8;
-    color: #1a1a18;
-    cursor: pointer;
-    transition: background 0.15s;
+    padding: 9px 22px; font-size: 13px; font-weight: 500; font-family: inherit;
+    border: 1px solid #d3d1c7; border-radius: 8px; background: #f1efe8;
+    color: #1a1a18; cursor: pointer; transition: background 0.15s;
   }
-
   .save-btn:hover { background: #e5e3dc; }
-
   .print-btn {
-    padding: 9px 22px;
-    font-size: 13px;
-    font-weight: 500;
-    font-family: inherit;
-    border: 1px solid #d3d1c7;
-    border-radius: 8px;
-    background: transparent;
-    color: #888780;
-    cursor: pointer;
-    transition: background 0.15s, color 0.15s;
+    padding: 9px 22px; font-size: 13px; font-weight: 500; font-family: inherit;
+    border: 1px solid #d3d1c7; border-radius: 8px; background: transparent;
+    color: #888780; cursor: pointer; transition: background 0.15s, color 0.15s;
   }
-
   .print-btn:hover { background: #f1efe8; color: #1a1a18; }
-
-  .save-hint {
-    font-size: 12px;
-    color: #3B6D11;
-    font-weight: 500;
-  }
-
+  .save-hint { font-size: 12px; color: #3B6D11; font-weight: 500; }
   @media print {
     body { background: white; padding: 0; }
     .card { box-shadow: none; border: none; padding: 1rem; }
     .unit-toggle, .add-btn, .del-btn, .save-bar { display: none; }
     tbody td input { border: none; }
   }
-
   @media (prefers-color-scheme: dark) {
     body { background: #1a1a18; }
     .card { background: #2c2c2a; border-color: #444441; }
@@ -282,14 +160,14 @@
       <thead>
         <tr>
           <th>Date</th>
-          <th>Bust</th>
-          <th>Waist</th>
-          <th>Hips</th>
-          <th>Thigh</th>
-          <th>Upper arm</th>
-          <th>Inseam</th>
-          <th>Height</th>
-          <th>Weight</th>
+          <th id="th-bust">Bust (in)</th>
+          <th id="th-waist">Waist (in)</th>
+          <th id="th-hips">Hips (in)</th>
+          <th id="th-thigh">Thigh (in)</th>
+          <th id="th-arm">Upper arm (in)</th>
+          <th id="th-inseam">Inseam (in)</th>
+          <th id="th-height">Height (in)</th>
+          <th id="th-weight">Weight (lbs)</th>
           <th></th>
         </tr>
       </thead>
@@ -313,33 +191,75 @@
 
 <script>
   let unit = 'in';
+  const lengthFields = ['bust','waist','hips','thigh','arm','inseam','height'];
 
-  function setUnit(u) {
-    unit = u;
-    document.getElementById('btn-in').classList.toggle('active', u === 'in');
-    document.getElementById('btn-cm').classList.toggle('active', u === 'cm');
+  function convertLength(val, toUnit) {
+    if (val === '' || isNaN(val)) return val;
+    const n = parseFloat(val);
+    return toUnit === 'cm'
+      ? Math.round(n * 2.54 * 10) / 10
+      : Math.round(n / 2.54 * 10) / 10;
+  }
+
+  function convertWeight(val, toUnit) {
+    if (val === '' || isNaN(val)) return val;
+    const n = parseFloat(val);
+    return toUnit === 'kg'
+      ? Math.round(n * 0.453592 * 10) / 10
+      : Math.round(n * 2.20462 * 10) / 10;
+  }
+
+  function updateHeaders(u) {
+    const w = u === 'in' ? 'lbs' : 'kg';
+    document.getElementById('th-bust').textContent = 'Bust (' + u + ')';
+    document.getElementById('th-waist').textContent = 'Waist (' + u + ')';
+    document.getElementById('th-hips').textContent = 'Hips (' + u + ')';
+    document.getElementById('th-thigh').textContent = 'Thigh (' + u + ')';
+    document.getElementById('th-arm').textContent = 'Upper arm (' + u + ')';
+    document.getElementById('th-inseam').textContent = 'Inseam (' + u + ')';
+    document.getElementById('th-height').textContent = 'Height (' + u + ')';
+    document.getElementById('th-weight').textContent = 'Weight (' + w + ')';
+  }
+
+  function setUnit(newUnit) {
+    if (newUnit === unit) return;
+    unit = newUnit;
+
+    document.getElementById('btn-in').classList.toggle('active', newUnit === 'in');
+    document.getElementById('btn-cm').classList.toggle('active', newUnit === 'cm');
+
+    document.querySelectorAll('#tbody tr').forEach(function(row) {
+      lengthFields.forEach(function(f) {
+        var inp = row.querySelector('[data-field="' + f + '"]');
+        if (inp && inp.value !== '') inp.value = convertLength(inp.value, newUnit);
+      });
+      var weightInp = row.querySelector('[data-field="weight"]');
+      if (weightInp && weightInp.value !== '') {
+        weightInp.value = convertWeight(weightInp.value, newUnit === 'in' ? 'lbs' : 'kg');
+      }
+    });
+
+    updateHeaders(newUnit);
   }
 
   function addRow(data) {
-    const d = data || {};
-    const today = new Date().toISOString().split('T')[0];
-    const fields = ['bust','waist','hips','thigh','arm','inseam','height','weight'];
+    var d = data || {};
+    var today = new Date().toISOString().split('T')[0];
+    var fields = ['bust','waist','hips','thigh','arm','inseam','height','weight'];
 
-    const tr = document.createElement('tr');
-    const id = 'row-' + Date.now() + Math.random();
-    tr.id = id;
+    var tr = document.createElement('tr');
 
-    const dateTd = document.createElement('td');
-    const dateInput = document.createElement('input');
+    var dateTd = document.createElement('td');
+    var dateInput = document.createElement('input');
     dateInput.type = 'date';
     dateInput.value = d.date || today;
     dateInput.dataset.field = 'date';
     dateTd.appendChild(dateInput);
     tr.appendChild(dateTd);
 
-    fields.forEach(f => {
-      const td = document.createElement('td');
-      const inp = document.createElement('input');
+    fields.forEach(function(f) {
+      var td = document.createElement('td');
+      var inp = document.createElement('input');
       inp.type = 'number';
       inp.min = '0';
       inp.step = '0.1';
@@ -350,12 +270,12 @@
       tr.appendChild(td);
     });
 
-    const delTd = document.createElement('td');
-    const del = document.createElement('button');
+    var delTd = document.createElement('td');
+    var del = document.createElement('button');
     del.className = 'del-btn';
     del.innerHTML = '&#x2715;';
     del.title = 'Remove row';
-    del.onclick = () => tr.remove();
+    del.onclick = function() { tr.remove(); };
     delTd.appendChild(del);
     tr.appendChild(delTd);
 
@@ -363,27 +283,25 @@
   }
 
   function downloadCSV() {
-    const rows = document.querySelectorAll('#tbody tr');
-    const notes = document.getElementById('notes').value;
-    const weightUnit = unit === 'in' ? 'lbs' : 'kg';
-    const headers = ['Date', `Bust (${unit})`, `Waist (${unit})`, `Hips (${unit})`, `Thigh (${unit})`, `Upper arm (${unit})`, `Inseam (${unit})`, `Height (${unit})`, `Weight (${weightUnit})`];
-    const fieldKeys = ['date','bust','waist','hips','thigh','arm','inseam','height','weight'];
+    var rows = document.querySelectorAll('#tbody tr');
+    var notes = document.getElementById('notes').value;
+    var weightUnit = unit === 'in' ? 'lbs' : 'kg';
+    var headers = ['Date','Bust ('+unit+')','Waist ('+unit+')','Hips ('+unit+')','Thigh ('+unit+')','Upper arm ('+unit+')','Inseam ('+unit+')','Height ('+unit+')','Weight ('+weightUnit+')'];
+    var fieldKeys = ['date','bust','waist','hips','thigh','arm','inseam','height','weight'];
 
-    let csv = headers.join(',') + '\n';
-    rows.forEach(row => {
-      const vals = fieldKeys.map(k => {
-        const inp = row.querySelector(`[data-field="${k}"]`);
+    var csv = headers.join(',') + '\n';
+    rows.forEach(function(row) {
+      var vals = fieldKeys.map(function(k) {
+        var inp = row.querySelector('[data-field="' + k + '"]');
         return inp ? (inp.value || '') : '';
       });
       csv += vals.join(',') + '\n';
     });
-    if (notes.trim()) {
-      csv += '\nNotes:,"' + notes.replace(/"/g, '""') + '"\n';
-    }
+    if (notes.trim()) csv += '\nNotes:,"' + notes.replace(/"/g, '""') + '"\n';
 
-    const blob = new Blob([csv], { type: 'text/csv' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    var blob = new Blob([csv], { type: 'text/csv' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
     a.href = url;
     a.download = 'body_measurements.csv';
     document.body.appendChild(a);
@@ -391,9 +309,9 @@
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 
-    const hint = document.getElementById('save-hint');
+    var hint = document.getElementById('save-hint');
     hint.textContent = 'Downloaded!';
-    setTimeout(() => hint.textContent = '', 2500);
+    setTimeout(function() { hint.textContent = ''; }, 2500);
   }
 
   addRow();
